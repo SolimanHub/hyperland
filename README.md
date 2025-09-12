@@ -3,8 +3,6 @@
 > **Un entorno de escritorio minimalista, moderno y altamente personalizado inspirado en Parrot OS.**  
 > Basado en el gestor de ventanas tiling **Hyprland**, con una estética limpia, funcionalidad potente y un flujo de trabajo optimizado.
 
-![Hyprland Screenshot](https://i.imgur.com/5X8QZzL.png) *(Imagen ilustrativa: estilo Parrot OS con bordes verdes/cian, sombras suaves y blur)*
-
 ---
 
 ## 📁 Estructura del Repositorio
