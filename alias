@@ -17,3 +17,6 @@ alias sv='sudo nvim -p'
 cop(){
   cat $1 | wl-copy --type text/plain
 }
+cat() {
+    command cat "$@" | lolcat
+}
