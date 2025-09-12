@@ -99,33 +99,33 @@
 ## 🛠️ Instalación
 
 ### 1. **Preparar el sistema**
-+++bash
+```bash
 # Actualiza el sistema
 sudo pacman -Syu
 
 # Instala las dependencias básicas
 sudo pacman -S git curl wget base-devel
-+++
+```
 
 ### 2. **Clonar este repositorio**
-+++bash
+```bash
 git clone https://github.com/tuusuario/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-+++
+```
 
 ### 3. **Instalar paquetes necesarios**
-+++bash
+```bash
 chmod +x paquetes.sh
 ./paquetes.sh
-+++
+```
 
 > **Nota**: Este script instala todo lo necesario: Hyprland, Waybar, Wofi, fuentes, herramientas de audio, red, etc.
 
 ### 4. **Aplicar configuración**
-+++bash
+```bash
 chmod +x config.sh
 ./config.sh
-+++
+```
 
 > El script crea enlaces simbólicos desde este repositorio hacia tus directorios de configuración:
 > - `~/.config/hypr/`
@@ -176,9 +176,9 @@ Cierra tu sesión actual y vuelve a iniciar en **Hyprland** desde tu display man
 ## 💡 Recomendaciones
 
 - **Fuentes**: Asegúrate de tener instaladas las fuentes Nerd Fonts. Si faltan iconos en Waybar, reinstálalas:
-  +++bash
+  ```bash
   yay -S ttf-jetbrains-mono-nerd ttf-fantasque-sans-mono-nerd
-  +++
+  ```
 - **Wallpaper**: Este repo no incluye wallpaper por defecto. Usa `hyprpaper` con una imagen de fondo oscuro.
 - **Bluetooth/Audio**: Si usas Bluetooth, asegúrate de tener `bluez` y `bluez-utils` instalados.
 - **HDR**: Si tienes pantalla HDR, revisa `cm_auto_hdr` en `hyprland.conf` y configura mpv con `--target-colorspace-hint-mode=source`.
