@@ -1,0 +1,19 @@
+#Scripts
+alias update='~/disco/rpi/update.sh'
+alias dime='~/Cocina/scripts/funciones_bashrc/dime'
+alias haz='~/Cocina/scripts/funciones_bashrc/haz'
+alias analizar='~/Cocina/scripts/funciones_bashrc/analizar'
+alias map='~/Cocina/scripts/documentar_proyecto/documentador'
+
+#Standar
+alias ls='ls --group-directories-first --color=auto'
+alias xclip='xclip -selection clipboard'
+alias rmd='rm -rfv'
+alias waybar-r='killall -SIGUSR2 waybar'
+
+alias v='nvim -p'
+alias sv='sudo nvim -p'
+
+cop(){
+  cat $1 | wl-copy --type text/plain
+}

@@ -1,0 +1,33 @@
+/* ~/.config/wofi/style.css */
+window {
+    background-color: rgba(30, 30, 46, 0.95);
+    border-radius: 12px;
+    border: 2px solid rgba(180, 190, 254, 0.3);
+}
+
+#input {
+    font-size: 18px;
+    color: #cdd6f4;
+    background-color: transparent;
+    margin: 10px;
+}
+
+#inner-box {
+    margin: 10px;
+}
+
+#text {
+    font-size: 16px;
+    color: #a6adc8;
+}
+
+#entry {
+    margin: 4px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    background-color: rgba(166, 173, 200, 0.2);
+    color: #f5e0dc;
+}
