@@ -90,9 +90,15 @@
 },
 
   "custom/temperature": {
-    "format": "{}°C",
-    "exec": "sensors | grep 'CPU' | awk '{print $2}' | tr -d '+' | tr -d '°C'",
-    "interval": 10
+    "format": " {}°C",
+    "exec": "sensors | grep -i 'cpu' | head -1 | awk '{print $2}' | tr -d '+°C' | awk -F. '{print $1}'",
+    "interval": 10,
+    "tooltip": true,
+    "tooltip-format": "Temperatura CPU: {}°C",
+    "states": {
+        "warning": 70,
+        "critical": 80
+    }
   },
 
 "cpu": {
@@ -135,7 +141,7 @@
     "scroll-step": 5
 },
 "network": {
-    "format-wifi": " {essid} {ipaddr}",
+    "format-wifi": " {signalStrength}%",
     "format-ethernet": " {ipaddr}",
     "format-linked": " {ipaddr}",
     "format-disconnected": " 󰤭",
