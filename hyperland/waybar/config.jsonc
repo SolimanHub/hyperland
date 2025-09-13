@@ -14,6 +14,9 @@
     ],
     "modules-right": [
         "custom/updates",
+        "custom/disk",
+        "custom/temperature",
+
         "cpu",
         "memory",
         "pulseaudio",
@@ -76,6 +79,22 @@
         "tooltip": true
     },
 
+
+"custom/disk": {
+  "format": " {used}G/{total}G ({percentage}%)",
+  "exec": "df -B1 / | awk 'NR==2{printf \"{\\\"text\\\": \\\"%.1f/%.1f\\\", \\\"tooltip\\\": \\\"Used: %.1fG\\\\nTotal: %.1fG\\\\nPercentage: %d%%\\\", \\\"percentage\\\": %d}\", $3/1073741824, $2/1073741824, $3/1073741824, $2/1073741824, $5}",
+  "return-type": "simple",
+  "interval": 30,
+  "exec-if": "mountpoint -q /",
+  "tooltip": true
+},
+
+  "custom/temperature": {
+    "format": "{}°C",
+    "exec": "sensors | grep 'CPU' | awk '{print $2}' | tr -d '+' | tr -d '°C'",
+    "interval": 10
+  },
+
 "cpu": {
     "interval": 2,
     "format": " {usage}% {icon}",
@@ -124,6 +143,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) - IP: {ipaddr}",
     "on-click": "nm-connection-editor"
 },
+
 "battery": {
     "interval": 2,
     "states": {
