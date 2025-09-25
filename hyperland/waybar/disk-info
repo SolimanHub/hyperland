@@ -1,0 +1,9 @@
+#!/bin/sh
+df -h / 2>/dev/null | awk 'NR==2 {
+    gsub(/%/, "", $5)
+    printf "{"
+    printf "\"text\": \"%s\", ", $4
+    printf "\"percentage\": %d, ", int($5)
+    printf "\"tooltip\": \"Porcentaje de disco utilizado: %d%% de %s\"", int($5), $2
+    printf "}\n"
+}'

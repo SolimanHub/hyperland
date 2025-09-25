@@ -79,22 +79,13 @@
         "tooltip": true
     },
 
-//"custom/disk": {
-//  "format": " {}",
-//  "exec": "df -h / | tail -n +2 | awk '{print $4}'",
-//  "return-type": "simple",
-//  "interval": 30,
-//  "exec-if": "mountpoint -q /",
-//  "tooltip": true
-//},
 "custom/disk": {
   "format": "󰋊 {text}",
-  "exec": "df -h / | awk 'NR==2 {gsub(/%/, \"\", $5); printf \"{\\\"text\\\": \\\"%s\\\", \\\"percentage\\\": %s}\", $4, $5}'",
+  "exec": "$HOME/.config/waybar/disk-info",
   "return-type": "json",
   "interval": 30,
   "exec-if": "mountpoint -q /",
-  "tooltip": true,
-  "tooltip-format": "Porcentaje de disco utilizado: {percentage}%"
+  "tooltip": true
 },
 
   "custom/temperature": {
