@@ -79,14 +79,22 @@
         "tooltip": true
     },
 
-
+//"custom/disk": {
+//  "format": " {}",
+//  "exec": "df -h / | tail -n +2 | awk '{print $4}'",
+//  "return-type": "simple",
+//  "interval": 30,
+//  "exec-if": "mountpoint -q /",
+//  "tooltip": true
+//},
 "custom/disk": {
-  "format": " {used}G/{total}G ({percentage}%)",
-  "exec": "df -B1 / | awk 'NR==2{printf \"{\\\"text\\\": \\\"%.1f/%.1f\\\", \\\"tooltip\\\": \\\"Used: %.1fG\\\\nTotal: %.1fG\\\\nPercentage: %d%%\\\", \\\"percentage\\\": %d}\", $3/1073741824, $2/1073741824, $3/1073741824, $2/1073741824, $5}",
-  "return-type": "simple",
+  "format": " {text}",
+  "exec": "df -h / | awk 'NR==2 {gsub(/%/, \"\", $5); printf \"{\\\"text\\\": \\\"%s\\\", \\\"percentage\\\": %s}\", $4, $5}'",
+  "return-type": "json",
   "interval": 30,
   "exec-if": "mountpoint -q /",
-  "tooltip": true
+  "tooltip": true,
+  "tooltip-format": "Porcentaje de disco utilizado: {percentage}%"
 },
 
   "custom/temperature": {

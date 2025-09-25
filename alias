@@ -1,5 +1,5 @@
 #Scripts
-alias update='~/disco/rpi/update.sh'
+alias update='~/Cocina/scripts/update-archlinux.sh'
 alias dime='~/Cocina/scripts/funciones_bashrc/dime'
 alias haz='~/Cocina/scripts/funciones_bashrc/haz'
 alias analizar='~/Cocina/scripts/funciones_bashrc/analizar'
