@@ -97,14 +97,15 @@ window#waybar.hidden {
     transition: all 0.3s ease;
 }
 
-/* Módulos de la derecha */
+/* Módulos de la derecha — incluyendo disk y temperature */
 #custom-updates,
+#custom-disk,
+#custom-temperature,
 #cpu,
 #memory,
 #pulseaudio,
 #network,
 #battery,
-#custom-temperatur,
 #tray {
     background: rgba(45, 45, 45, 0.9);
     color: #ffffff;
@@ -128,6 +129,11 @@ window#waybar.hidden {
 @keyframes pulse {
     from { opacity: 0.8; }
     to { opacity: 1; }
+}
+
+/* Disk */
+#custom-disk {
+    color: #f39c12; /* Naranja suave para disco */
 }
 
 /* CPU */
@@ -253,7 +259,7 @@ tooltip label {
     color: #ffffff;
 }
 
-/* Estilos específicos para temperatura */
+/* Estilos específicos para temperatura — CORREGIDO */
 #custom-temperature {
     color: #00ff41; /* Verde para estado normal */
 }
