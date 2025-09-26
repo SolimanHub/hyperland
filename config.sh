@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+# Configurar colores
+RED='\033[31m'
+GREEN='\033[32m'
+YELLOW='\033[33m'
+NC='\033[0m'
+
 DIR_CONFIG="s"  
 
 echo "Recuerda colocar este directorio en el mejor lugar de tu configuracion"
@@ -43,4 +49,5 @@ create_symlink "$(pwd)/hyperland/hypr" "$HOME/.config/hypr"
 create_symlink "$(pwd)/hyperland/waybar" "$HOME/.config/waybar"
 create_symlink "$(pwd)/hyperland/wofi" "$HOME/.config/wofi"
 
-echo "🎉 ¡Todos los enlaces simbólicos se crearon correctamente!"
+echo -e "${YELLOW}Recuerda ln -s /usr/bin/disk-info${NC}"
+echo -e "${GREEN}🎉 ¡Todos los enlaces simbólicos se crearon correctamente!${NC}"
